@@ -1,0 +1,26 @@
+# Write Python program to create application which use date n time in python
+from tkinter import *
+from tkinter.ttk import*
+from time import strftime
+root = Tk()
+root.title('Clock')
+from tkinter import *
+import datetime as dt
+def time():
+    string = strftime('%H:%M:%S %p')
+    lbl.config(text=string)
+    lbl.after(1000,time)
+lbl=Label(root,font=('calibri',40,'bold'),background='orange',foreground='white')
+lbl.pack(anchor='center')
+time()
+mainloop()
+def date():
+    win=Tk()
+    win.title("Display Current Date")
+    win.geometry("700x250")
+    date=dt.datetime.now()
+    label=Label(win,text=f"{date:%A,%B%d,%y}",
+                font="Calibri,20")
+    label.pack(pady=20)
+date()
+mainloop()

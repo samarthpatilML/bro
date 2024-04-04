@@ -1,0 +1,3 @@
+fw=open("sample.txt","a")
+fw.write("love robotic")
+fw.close()
