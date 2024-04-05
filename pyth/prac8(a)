@@ -1,5 +1,3 @@
-#write a python program to creat server,client and exchange basic information
-#server pragram
 import socket
 def server_program():
     host=socket.gethostname()
@@ -20,6 +18,28 @@ def server_program():
 
 if __name__="__main__":
     server_progam()
+
+
+
+#client program
+
+import socket
+def client_program():
+    host=socket.gethostname()
+    port=5000
+    client_socket=socket.socket()
+    client_socket.annect((host,port))
+    message=input("-->")
+    while message.lower():strip()!="bye":
+        client_socket.send(message.encode())
+        data=client_socket.recv(1024).decode()
+        print("received from server:"+data)
+        message=input("-->")
+    client_socket.close()
+
+if __name__=="__main__":
+    client_program()
+
 
     
   
